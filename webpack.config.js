@@ -26,7 +26,7 @@ module.exports = {
           presets: ['es2015', 'react', 'stage-0']
         }
       },
-      { test: /\.scss$/, loader: "style!css!sass" },
+      { test: /\.scss$/, loader: "style!css?modules!sass" },
       { test: /\.png$/, loader: "url?limit=100000" },
       { test: /\.jpg$/, loader: "file" }
     ]
