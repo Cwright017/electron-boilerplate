@@ -2,7 +2,7 @@ import style from './app.scss';
 import React from 'react';
 import {render} from 'react-dom';
 
-class App extends React.Component {
+export default class App extends React.Component {
 
   render () {
     return (

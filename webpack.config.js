@@ -21,10 +21,7 @@ module.exports = {
       {
         test: /(\.js$|\.jsx$)/,
         exclude: /(node_modules|dist)/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'react', 'stage-0']
-        }
+        loader: 'babel'
       },
       { test: /\.scss$/, loader: "style!css?modules!sass" },
       { test: /\.png$/, loader: "url?limit=100000" },
@@ -40,5 +37,11 @@ module.exports = {
     chunks: ['renderer'],
     inject: 'body',
     hash: 'true'
-  })]
+  })],
+  externals: {
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
+  }
 };
