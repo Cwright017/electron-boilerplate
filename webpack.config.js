@@ -5,7 +5,7 @@ module.exports = {
   context: __dirname,
   entry: {
     main: './main.js',
-    renderer: './app/components/App/app.jsx'
+    renderer: './app/index.jsx'
   },
   output: {
       path: path.resolve(__dirname, './dist'),
