@@ -1,4 +1,4 @@
-![alt text](https://travis-ci.org/Cwright017/electron-boilerplate.svg?branch=master "Travis-ci Status")
+# [![Build Status](https://travis-ci.org/Cwright017/electron-boilerplate.svg?branch=master)](https://travis-ci.org/Cwright017/electron-boilerplate) [![Dependency Status](https://david-dm.org/CWright017/electron-boilerplate.svg)](https://david-dm.org/CWright017/electron-boilerplate)
 
-# electron-boilerplate
+# Electron-Boilerplate
 Boilerplate for electron with es6 using babel.
