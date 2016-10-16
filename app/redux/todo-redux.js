@@ -1,3 +1,5 @@
+import { createReducer } from '../utils/redux-utils.js';
+
 //Action types
 const ADD_TODO = 'ADD_TODO';
 
@@ -10,11 +12,10 @@ export function addTodo(text) {
 }
 
 //reducers
-export default function todos(state = [], action) {
-  switch (action.type) {
-    case ADD_TODO:
-      return state.concat([ action.text ])
-    default:
-      return state
-  }
-}
+const todos = createReducer([], {
+    [ADD_TODO](state, action) {
+      return state.concat([ action.text ]);
+    }
+});
+
+export default todos

@@ -1,4 +1,5 @@
 import {render} from 'react-dom';
+import { uniqueKey } from '../../utils/react-utils';
 import React, { Component, PropTypes } from 'react';
 import style from './app.scss';
 
