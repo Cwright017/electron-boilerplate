@@ -1,21 +1,24 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 
 import todos from '../redux/todo-redux'
 
-const middlewares = [thunkMiddleware];
+const middleware = [thunkMiddleware];
 
 if (process.env.NODE_ENV === 'dev') {
-    middlewares.push(createLogger())
+    middleware.push(createLogger())
 }
 
 const store = createStore(
   combineReducers({
     todos
   }),
-  applyMiddleware(...middlewares)
+  composeWithDevTools(
+    applyMiddleware(...middleware)
+  )
 )
 
 export default store

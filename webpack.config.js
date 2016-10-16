@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -39,7 +40,13 @@ module.exports = {
     chunks: ['renderer'],
     inject: 'body',
     hash: 'true'
-  })],
+  }),
+  new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"dev"'
+      }
+    })
+  ],
   externals: {
     'cheerio': 'window',
     'react/addons': true,
