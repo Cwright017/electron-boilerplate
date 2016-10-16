@@ -30,7 +30,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.scss'],
-    modulesDirectories: ['components', 'node_modules']
+    modulesDirectories: ['app', 'node_modules']
   },
   plugins: [new HtmlWebpackPlugin({
     template: './app/index.html',
