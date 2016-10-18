@@ -47,9 +47,6 @@ module.exports = {
       }
     })
   ],
-  devServer: {
-    contentBase: __dirname
-  },
   externals: {
     'cheerio': 'window',
     'react/addons': true,
