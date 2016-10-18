@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "start": "npm run build && NODE_ENV=dev electron ./dist/main.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --history-api-fallback --progress --port 3000",
+    "dev": "./node_modules/.bin/webpack-dev-server --progress --port 3000",
     "build": "npm run clean && webpack --progress --colors .",
     "package": "npm run build && cp ./package.json ./dist && electron-packager ./dist --platform=darwin --arch=x64 --prune --overwrite",
     "test": "mocha --require babel-core/register --require ignore-styles ./app/test/setup.js ./app/**/*.spec.js --colors"
@@ -49,8 +49,8 @@
     "react-addons-test-utils": "^15.3.1",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.9"
   },
   "dependencies": {
     "electron": "^1.3.2",

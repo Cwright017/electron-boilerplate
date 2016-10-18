@@ -8,8 +8,6 @@ module.exports = {
     main: './main.js',
     renderer: './app/index.jsx'
   },
-  debug: true,
-  devtool: 'inline-source-map',
   output: {
       path: path.resolve(__dirname, './dist'),
       filename: "[name].js"
@@ -18,6 +16,7 @@ module.exports = {
     __dirname: false,
     __filename: false
   },
+  devtool: 'cheap-eval-source-map',
   target: 'electron',
   module: {
     loaders: [
@@ -32,8 +31,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss'],
-    modulesDirectories: ['app', 'node_modules']
+    extensions: ['.js', '.jsx', '.scss'],
+    modules: [path.resolve('./app'), 'node_modules']
   },
   plugins: [
   new HtmlWebpackPlugin({
