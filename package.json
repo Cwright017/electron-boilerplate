@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "start": "npm run build && NODE_ENV=dev electron ./dist/main.js",
-    "dev": "webpack-dev-server --content-base dist/",
+    "dev": "./node_modules/.bin/webpack-dev-server --history-api-fallback --progress --port 3000",
     "build": "npm run clean && webpack --progress --colors .",
     "package": "npm run build && cp ./package.json ./dist && electron-packager ./dist --platform=darwin --arch=x64 --prune --overwrite",
     "test": "mocha --require babel-core/register --require ignore-styles ./app/test/setup.js ./app/**/*.spec.js --colors"

@@ -35,7 +35,8 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.scss'],
     modulesDirectories: ['app', 'node_modules']
   },
-  plugins: [new HtmlWebpackPlugin({
+  plugins: [
+  new HtmlWebpackPlugin({
     template: './app/index.html',
     chunks: ['renderer'],
     inject: 'body',
@@ -47,6 +48,9 @@ module.exports = {
       }
     })
   ],
+  devServer: {
+    contentBase: __dirname
+  },
   externals: {
     'cheerio': 'window',
     'react/addons': true,
