@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "start": "npm run build && NODE_ENV=dev electron ./dist/main.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --progress --port 3000 --config ./webpack.config.web.js",
-    "build": "npm run clean && webpack --progress --colors --config ./webpack.config.electron.js ." ,
+    "dev": "./node_modules/.bin/webpack-dev-server --progress --port 3000 --config ./webpack.config.web.js --hot",
+    "build": "npm run clean && webpack --progress --colors --config ./webpack.config.electron.js .",
     "package": "npm run build && cp ./package.json ./dist && electron-packager ./dist --platform=darwin --arch=x64 --prune --overwrite",
     "test": "mocha --require babel-core/register --require ignore-styles ./app/test/setup.js ./app/**/*.spec.js --colors"
   },
@@ -47,6 +47,7 @@
     "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
     "react-addons-test-utils": "^15.3.1",
+    "react-hot-loader": "^3.0.0-beta.6",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.25",

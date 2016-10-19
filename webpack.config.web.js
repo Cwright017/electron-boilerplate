@@ -4,12 +4,15 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: {
-    renderer: './app/index.jsx'
-  },
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './app/index.jsx'
+  ],
   output: {
       path: path.resolve(__dirname, './dist'),
-      filename: "[name].js"
+      filename: "bundle.js"
   },
   node: {
     __dirname: false,
@@ -36,7 +39,6 @@ module.exports = {
   plugins: [
   new HtmlWebpackPlugin({
     template: './app/index.html',
-    chunks: ['renderer'],
     inject: 'body',
     hash: 'true'
   }),
