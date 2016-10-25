@@ -1,11 +1,17 @@
+import test from 'ava';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import {expect} from 'chai';
 import App from './App.jsx';
 
-describe('<App />', () => {
-  it('Should render Hello World', function () {
+
+test('Should render Hello World', t => {
     const wrapper = shallow(<App/>);
-    expect(wrapper.text().trim()).to.equal('Hello World');
-  });
-});
+    t.is(wrapper.text().trim(), 'Hello World');
+})
+
+// describe('<App />', () => {
+//   it('Should render Hello World', function () {
+//     const wrapper = shallow(<App/>);
+//     expect(wrapper.text().trim()).to.equal('Hello World');
+//   });
+// });

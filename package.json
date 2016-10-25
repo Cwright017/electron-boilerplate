@@ -9,7 +9,24 @@
     "dev": "./node_modules/.bin/webpack-dev-server --progress --port 3000 --config ./webpack.config.web.js --hot",
     "build": "npm run clean && webpack --progress --colors --config ./webpack.config.electron.js .",
     "package": "npm run build && cp ./package.json ./dist && electron-packager ./dist --platform=darwin --arch=x64 --prune --overwrite",
-    "test": "mocha --require babel-core/register --require ignore-styles ./app/test/setup.js ./app/**/*.spec.js --colors"
+    "test": "ava"
+  },
+  "ava": {
+    "files": [
+      "./app/**/*.spec.js"
+    ],
+    "source": [
+      "./app/**/*.{js,jsx}"
+    ],
+    "require": [
+      "./app/test/require-hook.js",
+      "babel-register",
+      "ignore-styles",
+      "./app/test/setup.js"
+    ],
+    "babel": {
+      "presets": [ "es2015", "react" ]
+    }
   },
   "repository": {
     "type": "git",
@@ -20,7 +37,8 @@
     "boilerplate",
     "webpack",
     "react",
-    "mocha",
+    "ava",
+    "chai",
     "scss",
     "sass",
     "electron-packager"
@@ -32,19 +50,20 @@
   },
   "homepage": "https://github.com/Cwright017/electron-boilerplate#readme",
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "css-loader": "^0.24.0",
     "electron-packager": "^7.7.0",
     "enzyme": "^2.4.1",
     "html-webpack-plugin": "^2.22.0",
     "ignore-styles": "^5.0.1",
-    "jsdom": "^9.4.2",
-    "mocha": "^3.0.2",
+    "jsdom": "^9.8.3",
     "node-sass": "^3.8.0",
     "react-addons-test-utils": "^15.3.1",
     "react-hot-loader": "^3.0.0-beta.6",
@@ -55,6 +74,7 @@
   },
   "dependencies": {
     "electron": "^1.3.2",
+    "immutable": "^3.8.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",

@@ -1,3 +1,4 @@
+import Immutable from 'immutable';
 import { createReducer } from '../utils/redux-utils.js';
 
 //Action types
@@ -12,9 +13,10 @@ export function addTodo(text) {
 }
 
 //reducers
-const todos = createReducer([], {
+const initialState = Immutable.List();
+const todos = createReducer(initialState, {
     [ADD_TODO](state, action) {
-      return state.concat([ action.text ]);
+      return state.push(action.text);
     }
 });
 

@@ -9,10 +9,6 @@ export default class App extends Component {
     return (
       <div>
         <h1 className={style.title}> Hello World </h1>
-
-        { this.props.todos.map((todo) => {
-         return <h2> {todo} </h2>
-        })}
       </div>
     )
   }
