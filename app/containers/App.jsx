@@ -8,11 +8,7 @@ import * as testActionCreator from '../redux/todo-redux'
 class AppContainer extends Component {
 
   componentDidMount() {
-    let i = 0;
-    const x = setInterval(() => {
-      this.props.addTodo(`helloWorld ${i}`);
-      i++;
-    }, 2000);
+    this.props.addTodo('First todo');
   }
 
   render () {

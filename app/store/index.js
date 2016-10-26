@@ -8,9 +8,9 @@ import todos from '../redux/todo-redux'
 
 const middleware = [thunkMiddleware];
 
-if (process.env.NODE_ENV === 'dev') {
-    middleware.push(createLogger())
-}
+// if (process.env.NODE_ENV === 'dev') {
+//     middleware.push(createLogger())
+// }
 
 const store = createStore(
   combineReducers({
