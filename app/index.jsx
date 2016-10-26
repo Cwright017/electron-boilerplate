@@ -1,17 +1,17 @@
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import React from 'react';
 import { AppContainer as HMRContainer} from 'react-hot-loader'; 
-
 import store from './store'
-import AppContainer from 'containers/App.jsx';
+
+import Routes from 'routes';
 
 render(
   <HMRContainer>
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={AppContainer}/>
+        { Routes }
       </Router>
     </Provider>
   </HMRContainer>
@@ -24,7 +24,7 @@ render(
         <HMRContainer>
             <Provider store={store}>
               <Router history={hashHistory}>
-                <Route path="/" component={AppContainer}/>
+                { Routes }
               </Router>
             </Provider>
           </HMRContainer>
