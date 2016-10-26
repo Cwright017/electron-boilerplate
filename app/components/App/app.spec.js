@@ -1,4 +1,3 @@
-import test from 'ava';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import App from './App.jsx';
@@ -7,10 +6,10 @@ const props = {
     todos: [ 'One' ]
 }
 
-test('Should render Hello World', t => {
+it('Should render Hello World', () => {
     const wrapper = shallow(<App {...props} />);
 
-    t.is(wrapper.find('h1').text().trim(), 'Hello World');
-    t.is(wrapper.find('span').length, 1);
-    t.is(wrapper.find('span').first().text().trim(), props.todos[0])
+    expect(wrapper.find('.title').text().trim()).toEqual('Hello World');
+    expect(wrapper.find('.todo').length).toBe(1);
+    expect(wrapper.find('.todo').first().text().trim()).toEqual(props.todos[0]);
 })

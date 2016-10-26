@@ -13,8 +13,8 @@ export default class App extends Component {
       <div>
         <h1 className={style.title}> Hello World </h1>
         {
-          this.props.todos.map((todo) => {
-            return <span> { todo } </span>;
+          this.props.todos.map((todo, i) => {
+            return <span key={i} className={style.todo} > { todo } </span>;
           })
         }
       </div>

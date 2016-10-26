@@ -66,11 +66,15 @@ Simply import the stylesheet like a regular js module and then reference the cla
 css can be written using regular css syntax, or [SASS](http://sass-lang.com/) thanks to the [sass-loader](https://github.com/jtangelder/sass-loader).
 
 ## Testing
-The project is setup to use the  [Mocha](https://github.com/mochajs/mocha) testing framework with [Chai](https://github.com/chaijs/chai) assertions allowing for easy unit testing. The project also includes AirBnB's [Enzyme](https://github.com/airbnb/enzyme) tool to make manipulating react components within tests easier.
+The project is setup to use the  [Jest](https://facebook.github.io/jest/) testing tool from Facebook, 
+and includes [Enzyme](http://airbnb.io/enzyme/index.html) from Airbnb as a utility to make testing react components easy.
 
-To run the unit tests use the standard `npm test` and the mocha output will appear in your terminal after they have finished running.
+To run the unit tests use the standard `npm test` and the Jest output will appear in your terminal after they have finished running.
 
-Tests are located within each components folder as a `*.spec.js` file, and mocha is configured to automatically find these files.
+Tests are located within each components folder as a `*.spec.js` file, and Jest is configured to automatically find these files.
+
+Jest is setup with [identity-obj-proxy](https://github.com/keyanzhang/identity-obj-proxy) to mock CSS modules. Specifying a module in your code as `className={style.title}` will 
+result in `class='title'`. 
 
 ## Packaging
 
