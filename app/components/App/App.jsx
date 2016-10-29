@@ -10,11 +10,11 @@ export default class App extends Component {
 
   render () {
     return (
-      <div>
-        <h1 className={style.title}> Hello World </h1>
+      <div className='App' >
+        <h1 className='title'> Hello World </h1>
         {
           this.props.todos.map((todo, i) => {
-            return <span key={i} className={style.todo} > { todo } </span>;
+            return <span key={i} className='App__todo' > { todo } </span>;
           })
         }
       </div>

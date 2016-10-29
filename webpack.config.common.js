@@ -15,7 +15,7 @@ module.exports = {
         exclude: /(node_modules|dist)/,
         loader: 'babel'
       },
-      { test: /\.scss$/, loader: "style!css?modules!sass" },
+      { test: /\.scss$/, loader: "style!css!sass" },
       { test: /\.png$/, loader: "url?limit=100000" },
       { test: /\.jpg$/, loader: "file" }
     ]

@@ -4,12 +4,15 @@ body {
   background-color: $primary-color;
 }
 
-.title {
-  background-color: blue;
-  color: pink;
-  text-align: center;
+.App {
+  .title {
+    background-color: blue;
+    color: pink;
+    text-align: center;
+  }
+
+  &__todo {
+    background-color: pink;
+  }
 }
 
-.todo {
-  
-}
