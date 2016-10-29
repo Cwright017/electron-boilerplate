@@ -41,30 +41,6 @@ in your component. Then you can write a regular es6 class extending `React.compo
 ### - ES6
 The app includes [Babel](https://github.com/babel/babel) in the form of [Babel-Loader](https://github.com/babel/babel-loader) allowing you to write your components in ES6 and JSX and this will be transpiled into browser compatible ES5.
 
-### - [CSS Modules](https://github.com/css-modules/css-modules)
-The app is configured to use css modules by default allowing each component to include its own stylesheet without classes conflicting with other components, making for easy sharable components.
-
-Simply import the stylesheet like a regular js module and then reference the class you want in the jsx:
-
- ```
- import {render} from 'react-dom';
- import React from 'react';
- import style from './app.scss';
-
- export default class App extends React.Component {
-
-   render () {
-     return (
-       <div>
-         <h1 className={style.title}> Hello World </h1>
-       </div>
-     )
-   }
- }
- ```
-
-css can be written using regular css syntax, or [SASS](http://sass-lang.com/) thanks to the [sass-loader](https://github.com/jtangelder/sass-loader).
-
 ## Testing
 The project is setup to use the  [Jest](https://facebook.github.io/jest/) testing tool from Facebook, 
 and includes [Enzyme](http://airbnb.io/enzyme/index.html) from Airbnb as a utility to make testing react components easy.
