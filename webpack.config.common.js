@@ -13,11 +13,11 @@ module.exports = {
       {
         test: /(\.js$|\.jsx$)/,
         exclude: /(node_modules|dist)/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
-      { test: /\.scss$/, loader: "style!css!sass" },
-      { test: /\.png$/, loader: "url?limit=100000" },
-      { test: /\.jpg$/, loader: "file" }
+      { test: /\.scss$/, loader: "style-loader!css-loader!sass-loader" },
+      { test: /\.png$/, loader: "url-loader?limit=100000" },
+      { test: /\.jpg$/, loader: "file-loader" }
     ]
   },
   resolve: {
